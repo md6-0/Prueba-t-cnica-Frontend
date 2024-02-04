@@ -1,0 +1,81 @@
+.header {
+  min-height: 10vh;
+
+  &__banner {
+    @include flex(row, center, center);
+    min-height: 3vh;
+    padding: 0.5rem;
+    background-color: $color-bg-banner;
+    color: $color-txt-logo;
+    font-size: 0.7rem;
+  }
+
+  &__nav {
+    @include flex(row, center, center);
+    min-height: 7vh;
+    padding: 0.5rem 1.7rem;
+
+    .header__logo {
+      flex: 1;
+      color: $color-txt-logo;
+      font-size: 1.7rem;
+      font-weight: 200;
+    }
+
+    .header__ul {
+      visibility: hidden;
+      position: absolute;
+      z-index: 2;
+      top: 10%;
+      height: auto;
+      width: 100%;
+      font-size: 0.9rem;
+
+      .header__li {
+        padding: 0.7rem 1rem;
+        background-color: $color-bg-body;
+        text-align: center;
+
+        a {
+          color: $color-txt-black;
+          &:hover,
+          &:focus {
+            text-shadow: -0.5px 0, 0.5px 0 black;
+          }
+        }
+      }
+    }
+
+    .header__icons {
+      @include flex(row, flex-end, center);
+      flex: 1;
+
+      .header__icon {
+        margin: 0 0.3rem;
+        width: 24px;
+        width: 24px;
+      }
+      .header__toggle {
+        @extend .header__icon;
+        margin: 0 0.5rem 0 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1275px) {
+  .header {
+    &__banner {
+      font-size: 0.8rem;
+    }
+    &__ul {
+      flex: 8;
+      position: static !important;
+      visibility: visible !important;
+      @include flex(row, center, center);
+    }
+    &__toggle {
+      display: none;
+    }
+  }
+}

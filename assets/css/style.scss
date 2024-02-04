@@ -1,0 +1,23 @@
+@import "./helpers/vars", "./helpers/mixins", "./components/header",
+  "./components/hero", "./components/blog";
+
+/*Estilos generales*/
+* {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: $color-bg-body;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
